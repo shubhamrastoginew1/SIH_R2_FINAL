@@ -17,13 +17,13 @@ import { Menu as MenuIcon } from "@mui/icons-material";
 
 import { useNavigate } from "react-router-dom";
 
-const pages = ["Explore", "Blog", "FAQ"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const pages = [ "Explore", "Blog", "FAQ" ];
+const settings = [ "Profile", "Account", "Dashboard", "Logout" ];
 
 function ResponsiveAppBar() {
   const navigate = useNavigate();
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [ anchorElNav, setAnchorElNav ] = React.useState(null);
+  const [ anchorElUser, setAnchorElUser ] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -44,7 +44,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="sticky">
+    <AppBar position="static" sx={{ background: 'transparent', color: 'rgb(140, 86, 248)' }}>
       <Container maxWidth="xl">
         <Toolbar
           disableGutters
@@ -138,16 +138,18 @@ function ResponsiveAppBar() {
               }}
             >
               {pages.map((page) => (
-                <Button
+                <Button variant="text" sx={{
+                  ":hover": {
+                    backgroundColor: 'rgb(140, 86, 248)',
+                    color: 'white'
+                  },
+                  my: 2,
+                  color: "rgb(140, 86, 248)",
+                  display: "block",
+                }}
                   key={page}
                   onClick={() => {
                     handleCloseNavMenu(page);
-                  }}
-                  s
-                  sx={{
-                    my: 2,
-                    color: "white",
-                    display: "block",
                   }}
                 >
                   {page}

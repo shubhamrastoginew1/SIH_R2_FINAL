@@ -13,10 +13,10 @@ import {
 
 /// File is incomplete. You need to add input boxes to take input for users to register.
 function Register() {
-  const [email, setEmail] = useState("");
-  const [UserName, setUserName] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmpassword, setConfirmPassword] = useState("");
+  const [ email, setEmail ] = useState("");
+  const [ UserName, setUserName ] = useState("");
+  const [ password, setPassword ] = useState("");
+  const [ confirmpassword, setConfirmPassword ] = useState("");
 
   //   const registerHandler = async () => {
   //     try {
@@ -45,6 +45,8 @@ function Register() {
       >
         <AppBar
           sx={{
+            background: 'transparent',
+            color: 'rgb(140, 86, 248)',
             display: "flex",
             width: "100vw",
             height: "60px",
@@ -66,8 +68,18 @@ function Register() {
           >
             LOGO{" "}
           </Typography>
-          <Button variant="outline" color="inherit">
-            <Link href="/login" underline="none" sx={{ color: "white" }}>
+          <Button variant="text" sx={{
+            ":hover": {
+              backgroundColor: 'rgb(140, 86, 248)',
+              color: 'white'
+            },
+            height: '70%',
+            marginX: '10px',
+            marginY: 'auto',
+            color: "rgb(140, 86, 248)",
+            display: "block",
+          }}>
+            <Link href="/login" underline="none" color="inherit" >
               Login
             </Link>
           </Button>
@@ -82,7 +94,7 @@ function Register() {
             alignItems: "center",
           }}
         >
-          <Typography sx={{ fontWeight: "bold" }}>
+          <Typography sx={{ fontWeight: "bold", color: 'rgb(140, 86, 248)', fontSize: '1.2rem' }}>
             Please Register with your credentials
           </Typography>
           <TextField
@@ -122,7 +134,18 @@ function Register() {
               setConfirmPassword(e.target.value);
             }}
           />
-          <Button variant="contained">Register</Button>
+          <Button variant="text" sx={{
+            ":hover": {
+              color: "white",
+              backgroundColor: 'rgb(124, 60, 240)',
+            },
+            my: 2,
+            display: "block",
+            backgroundColor: 'rgb(140, 86, 248)',
+            color: 'white',
+            paddingX: '15px'
+          }}>Register
+          </Button>
         </Card>
       </Box>
     </>

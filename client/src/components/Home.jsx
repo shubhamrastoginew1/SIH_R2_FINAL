@@ -16,15 +16,15 @@ const Home = () => {
   };
   return (
     <>
-      <NavBar_logout />
       <Box
         sx={{
-          height: "91vh",
-          backgroundImage: 'url("/assets/img1.jpg")',
+          height: "100vh",
+          backgroundImage: 'url("/assets/bg1.jpeg")',
           backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundPosition: "center"
         }}
       >
+        <NavBar_logout />
         <Box
           sx={{
             display: "flex",
@@ -38,13 +38,10 @@ const Home = () => {
           }}
         >
           <Typography variant="h2" sx={{ marginBottom: "1.25rem" }}>
-            Lorem ipsum dolor sit, amet consectetur .
+            Empowering Future with AI guidance
           </Typography>
           <Typography sx={{ marginBottom: "1.25rem" }}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-            saepe enim nemo numquam a id corrupti porro dolor fugit in,
-            similique voluptatem doloremque quasi natus praesentium, voluptas
-            amet, voluptate rerum.
+            Welcome to Your Career Compass! Discover your path with personalized AI-driven career guidance, aptitude tests, and expert insights, empowering you to navigate a future that fits
           </Typography>
           <Box
             sx={{
@@ -54,24 +51,30 @@ const Home = () => {
               justifyContent: "space-between",
             }}
           >
-            <Button
-              variant="contained"
-              sx={{
-                fontSize: "1.25rem",
-              }}
-              onClick={loginHandler}
-            >
-              LOGIN
+            <Button variant="text" onClick={loginHandler} sx={{
+              ":hover": {
+                color: "white",
+                backgroundColor: 'rgb(124, 60, 240)',
+              },
+              display: "block",
+              backgroundColor: 'rgb(140, 86, 248)',
+              color: 'white',
+              paddingX: '15px',
+              fontSize: '1.1rem'
+            }}>LOGIN
             </Button>
 
-            <Button
-              variant="contained"
-              sx={{
-                fontSize: "1.25rem",
-              }}
-              onClick={signupHandler}
-            >
-              SIGNUP
+            <Button variant="text" onClick={signupHandler} sx={{
+              ":hover": {
+                color: "white",
+                backgroundColor: 'rgb(124, 60, 240)',
+              },
+              display: "block",
+              backgroundColor: 'rgb(140, 86, 248)',
+              color: 'white',
+              paddingX: '15px',
+              fontSize: '1.1rem'
+            }}>SIGNUP
             </Button>
           </Box>
         </Box>
