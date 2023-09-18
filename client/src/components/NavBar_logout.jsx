@@ -16,12 +16,12 @@ import {
 import { Menu as MenuIcon } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 
-const pages = ["Explore", "Blog", "FAQ", "LOGIN", "SIGNUP"];
+const pages = [ "Explore", "Blog", "FAQ", "LOGIN", "SIGNUP" ];
 // const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function NavBar_logout() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [ anchorElNav, setAnchorElNav ] = React.useState(null);
+  const [ anchorElUser, setAnchorElUser ] = React.useState(null);
 
   const navigate = useNavigate();
 
@@ -44,7 +44,7 @@ function NavBar_logout() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="sticky"  sx={{ background: "transparent", color: 'rgb(140, 86, 248)' }}>
       <Container maxWidth="xl">
         <Toolbar
           disableGutters
@@ -138,14 +138,19 @@ function NavBar_logout() {
           >
             {pages.map((page) => (
               <Button
+              variant="text"
                 key={page}
                 onClick={() => {
                   handleCloseNavMenu(page);
                 }}
                 s
                 sx={{
+                  ":hover": {
+                    backgroundColor: 'rgb(140, 86, 248)',
+                    color: 'white'
+                  },
                   my: 2,
-                  color: "white",
+                  color: "rgb(140, 86, 248)",
                   display: "block",
                 }}
               >

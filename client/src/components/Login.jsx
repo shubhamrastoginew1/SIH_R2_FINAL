@@ -15,8 +15,8 @@ import {
 
 /// File is incomplete. You need to add input boxes to take input for users to login.
 function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [ email, setEmail ] = useState("");
+  const [ password, setPassword ] = useState("");
   const naviagte = useNavigate();
 
   //   const loginHandler = async () => {
@@ -53,6 +53,8 @@ function Login() {
     >
       <AppBar
         sx={{
+          background: 'transparent',
+          color: 'rgb(140, 86, 248)',
           display: "flex",
           width: "100vw",
           height: "60px",
@@ -75,8 +77,18 @@ function Login() {
           LOGO
         </Typography>
 
-        <Button variant="outline" color="inherit">
-          <Link href="/signup" underline="none" sx={{ color: "white" }}>
+        <Button variant="text" sx={{
+          ":hover": {
+            backgroundColor: 'rgb(140, 86, 248)',
+            color: 'white'
+          },
+          height: '70%',
+          marginX: '10px',
+          marginY: 'auto',
+          color: "rgb(140, 86, 248)",
+          display: "block",
+        }}>
+          <Link href="/signup" underline="none" color="inherit">
             Signup
           </Link>
         </Button>
@@ -92,7 +104,7 @@ function Login() {
           alignItems: "center",
         }}
       >
-        <Typography sx={{ fontWeight: "bold" }}>
+        <Typography sx={{ fontWeight: "bold", color: 'rgb(140, 86, 248)', fontSize: '1.2rem' }}>
           Welcome back! Please login
         </Typography>
         <TextField
@@ -113,7 +125,18 @@ function Login() {
             setPassword(e.target.value);
           }}
         />
-        <Button variant="contained">Login</Button>
+        <Button variant="text" sx={{
+          ":hover": {
+            color: "white",
+            backgroundColor: 'rgb(124, 60, 240)',
+          },
+          my: 2,
+          display: "block",
+          backgroundColor: 'rgb(140, 86, 248)',
+          color: 'white',
+          paddingX: '15px'
+        }}>Login
+        </Button>
       </Card>
     </Box>
   );
