@@ -8,6 +8,7 @@ import NavBar_logout from "./components/NavBar_logout";
 import Blog from "./components/Blog";
 import Explore from "./components/Explore";
 import Landing from "./components/Landing";
+import Chat from "./components/Chat";
 // import Test from "./components/Test";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -29,6 +30,8 @@ function App() {
           <Route path="/landing" element={<Landing />} />
           <Route path="/explore" element={<Explore />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/Chatup" element={<Chat />} />
+
           <Route path="/faq" element={<Faq />} />
         </Routes>
       </Router>

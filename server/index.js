@@ -22,14 +22,18 @@ console.log(USERS);
 //authentication
 const SECRET = "my-secret-key";
 
-const authenticateJwt = (req, res, next) => {
+const authenticateJwtuser = (req, res, next) => {
   const authHeader = req.headers.authorization;
+  console.log(authHeader);
   if (authHeader) {
     const token = authHeader.split(" ")[1];
+    console.log(token);
     jwt.verify(token, SECRET, (err, user) => {
       if (err) {
+        // console.log("returen from here");
         return res.sendStatus(403);
       }
+      console.log("hererrerererer", user);
       req.user = user;
       next();
     });
@@ -63,6 +67,11 @@ app.post("/login", (req, res) => {
   } else {
     res.status(403).json({ message: "Invalid username or password" });
   }
+});
+
+app.get("/me", authenticateJwtuser, (req, res) => {
+  console.log("thidvghbnjghjnmbkjhk1", req.user);
+  res.json({ email: req.user.email });
 });
 
 app.listen(4000, () => {

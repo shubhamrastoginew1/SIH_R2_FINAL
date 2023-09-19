@@ -17,13 +17,13 @@ import { Menu as MenuIcon } from "@mui/icons-material";
 
 import { useNavigate } from "react-router-dom";
 
-const pages = [ "Explore", "Blog", "FAQ" ];
-const settings = [ "Profile", "Account", "Dashboard", "Logout" ];
+const pages = ["Explore", "Blog", "ChatUp", "FAQ"];
+const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function ResponsiveAppBar() {
   const navigate = useNavigate();
-  const [ anchorElNav, setAnchorElNav ] = React.useState(null);
-  const [ anchorElUser, setAnchorElUser ] = React.useState(null);
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -43,8 +43,17 @@ function ResponsiveAppBar() {
     setAnchorElUser(null);
   };
 
+  const logoutHandler = () => {
+    localStorage.removeItem("email");
+    localStorage.removeItem("token");
+    navigate("/");
+  };
+
   return (
-    <AppBar position="sticky" sx={{ background: 'transparent', color: 'rgb(140, 86, 248)' }}>
+    <AppBar
+      position="sticky"
+      sx={{ background: "transparent", color: "rgb(140, 86, 248)" }}
+    >
       <Container maxWidth="xl">
         <Toolbar
           disableGutters
@@ -61,12 +70,12 @@ function ResponsiveAppBar() {
               display: { xs: "none", md: "flex" },
               fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: ".3rem",
+              letterSpacing: ".2rem",
               color: "inherit",
               textDecoration: "none",
             }}
           >
-            LOGO000
+            LangMODLabs
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -129,7 +138,7 @@ function ResponsiveAppBar() {
               textDecoration: "none",
             }}
           >
-            LOGO
+            LangMODLabs
           </Typography>
           <Box sx={{ display: "flex" }}>
             <Box
@@ -138,15 +147,17 @@ function ResponsiveAppBar() {
               }}
             >
               {pages.map((page) => (
-                <Button variant="text" sx={{
-                  ":hover": {
-                    backgroundColor: 'rgb(140, 86, 248)',
-                    color: 'white'
-                  },
-                  my: 2,
-                  color: "rgb(140, 86, 248)",
-                  display: "block",
-                }}
+                <Button
+                  variant="text"
+                  sx={{
+                    ":hover": {
+                      backgroundColor: "rgb(140, 86, 248)",
+                      color: "white",
+                    },
+                    my: 2,
+                    color: "rgb(140, 86, 248)",
+                    display: "block",
+                  }}
                   key={page}
                   onClick={() => {
                     handleCloseNavMenu(page);
@@ -157,8 +168,22 @@ function ResponsiveAppBar() {
               ))}
             </Box>
 
-            <Box>
-              <Tooltip title="Open settings">
+            <Box sx={{ display: "flex" }}>
+              <Button
+                onClick={logoutHandler}
+                sx={{
+                  ":hover": {
+                    backgroundColor: "rgb(140, 86, 248)",
+                    color: "white",
+                  },
+                  my: 2,
+                  color: "rgb(140, 86, 248)",
+                  display: "block",
+                }}
+              >
+                Logout
+              </Button>
+              {/* <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                   <Avatar
                     alt="Remy Sharp"
@@ -166,8 +191,8 @@ function ResponsiveAppBar() {
                     sx={{ mt: "10px" }}
                   />
                 </IconButton>
-              </Tooltip>
-              <Menu
+              </Tooltip> */}
+              {/* <Menu
                 sx={{ mt: "45px" }}
                 id="menu-appbar"
                 anchorEl={anchorElUser}
@@ -188,7 +213,7 @@ function ResponsiveAppBar() {
                     <Typography textAlign="center">{setting}</Typography>
                   </MenuItem>
                 ))}
-              </Menu>
+              </Menu> */}
             </Box>
           </Box>
         </Toolbar>

@@ -21,17 +21,25 @@ function Login() {
 
   const loginHandler = async () => {
     try {
-      const response = await axios.post("http://localhost:4000/login", null, {
-        headers: {
-          email,
-          password,
-        },
-      });
+      if (email == "" || password == "")
+        alert("Make sure all the details are filled");
+      else if (email.indexOf("@") == -1)
+        alert("Please enter a valid email address");
+      else if (password.length < 8)
+        alert("Password must have atleast 8 characters");
+      else {
+        const response = await axios.post("http://localhost:4000/login", null, {
+          headers: {
+            email,
+            password,
+          },
+        });
 
-      console.log(response);
-      alert(response.data.message);
-      localStorage.setItem("token", response.data.token);
-      naviagte("/landing");
+        console.log(response);
+        alert(response.data.message);
+        localStorage.setItem("token", response.data.token);
+        naviagte("/");
+      }
     } catch (error) {
       console.log(error);
       alert(error.response.data.message);

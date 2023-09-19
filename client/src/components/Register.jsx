@@ -21,16 +21,29 @@ function Register() {
 
   const registerHandler = async () => {
     try {
-      const response = await axios.post("http://localhost:4000/signup", {
-        username: UserName,
-        email,
-        password,
-      });
+      if (
+        email == "" ||
+        UserName == "" ||
+        password == "" ||
+        confirmpassword == ""
+      )
+        alert("Make sure all the details are filled");
+      else if (email.indexOf("@") == -1)
+        alert("Please enter a valid email address");
+      else if (password !== confirmpassword)
+        alert("password and confirmPassword does not match");
+      else {
+        const response = await axios.post("http://localhost:4000/signup", {
+          username: UserName,
+          email,
+          password,
+        });
 
-      console.log(response);
-      alert(response.data.message);
-      localStorage.setItem("token", response.data.token);
-      navigate("/login");
+        console.log(response);
+        alert(response.data.message);
+        localStorage.setItem("token", response.data.token);
+        navigate("/login");
+      }
     } catch (error) {
       console.log(error);
     }
@@ -121,7 +134,7 @@ function Register() {
 
           <TextField
             label="Email"
-            type="text"
+            type="email"
             sx={{ width: 300 }}
             value={email}
             onChange={(e) => {
