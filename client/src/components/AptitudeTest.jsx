@@ -2,14 +2,16 @@ import React from 'react'
 import { Box, FormControl, Typography, Button, FormLabel, FormControlLabel, RadioGroup, Radio, backdropClasses } from '@mui/material';
 import ResponsiveAppBar from './NavBar';
 import { Footer } from './Footer';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const AptitudeTest = () => {
-
+    const navigate = useNavigate();
     const [ value, setValue ] = React.useState(new Array(9).fill('-1'));
 
     const ans = [ "Stack", "ping", "Git", "1, 3, 6, 10, 15, ...", "32", "Root", "66", "$32", "3/8" ];
 
-    const onClickHandler = () => {
+    const onClickHandler = async () => {
         for (let i = 0; i < 9; i++) {
             if (value[ i ] === '-1') {
                 alert('Please answer all the questions');
@@ -19,21 +21,33 @@ const AptitudeTest = () => {
         let technical = 0;
         let congnitive = 0;
         let numerical = 0;
-        for(let i=0;i<3;i++){
-            if(value[i] === ans[i]){
-                technical = technical+1;
+        for (let i = 0; i < 3; i++) {
+            if (value[ i ] === ans[ i ]) {
+                technical = technical + 1;
             }
         }
-        for(let i=3;i<6;i++){
-            if(value[i] === ans[i]){
-                congnitive = congnitive+1;
+        for (let i = 3; i < 6; i++) {
+            if (value[ i ] === ans[ i ]) {
+                congnitive = congnitive + 1;
             }
         }
-        for(let i=6;i<9;i++){
-            if(value[i] === ans[i]){
-                numerical = numerical+1;
+        for (let i = 6; i < 9; i++) {
+            if (value[ i ] === ans[ i ]) {
+                numerical = numerical + 1;
             }
         }
+
+        const res = await axios.post("http://localhost:4000/userdata", ({
+            email: localStorage.getItem('email'),
+            technical: technical,
+            cognitive: congnitive,
+            numerical: numerical
+        }));
+
+        alert("Successfully Submitted!!");
+
+        navigate('/dashboard');
+
     }
 
 
