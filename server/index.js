@@ -74,6 +74,7 @@ app.get("/me", authenticateJwtuser, (req, res) => {
   res.json({ email: req.user.email });
 });
 
+app.post("/userdata");
 app.listen(4000, () => {
   console.log("server started");
 });
