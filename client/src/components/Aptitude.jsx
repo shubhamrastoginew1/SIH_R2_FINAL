@@ -32,7 +32,15 @@ const Aptitude = () => {
             hic, rem ipsam praesentium, at eius. Non illo ex expedita quod
             debitis?
           </Typography>
-          <Button variant="contained" sx={{ width: "300px" }}>
+          <Button variant="text" sx={{
+            width: "300px",
+            backgroundColor: "rgb(140, 86, 248)",
+            color: "white",
+            ":hover": {
+              color: "white",
+              backgroundColor: "rgb(124, 60, 240)",
+            }
+          }} href="/explore/aptitude-test">
             ATTEMPT NOW
           </Button>
         </Box>
@@ -41,7 +49,7 @@ const Aptitude = () => {
           src="\assets\undraw_elements_re_25t9.svg"
           style={{ width: "38vw" }}
         />
-      </Box>
+      </Box >
     </>
   );
 };

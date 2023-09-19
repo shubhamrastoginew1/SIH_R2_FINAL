@@ -65,7 +65,7 @@ export default function CustomizedAccordions() {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          height: "70vh",
+          height: "75vh",
         }}
       >
         <Typography variant="h4" style={{ marginBottom: "1.125rem", color: 'rgb(140, 86, 248)' }}>
