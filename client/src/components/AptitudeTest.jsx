@@ -12,8 +12,11 @@ import {
 } from "@mui/material";
 import ResponsiveAppBar from "./NavBar";
 import { Footer } from "./Footer";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const AptitudeTest = () => {
+  const navigate = useNavigate();
   const [value, setValue] = React.useState(new Array(9).fill("-1"));
 
   const ans = [

@@ -2,18 +2,27 @@ import React from 'react'
 import { Box, FormControl, Typography, Button, FormLabel, FormControlLabel, RadioGroup, Radio, backdropClasses } from '@mui/material';
 import ResponsiveAppBar from './NavBar';
 import { Footer } from './Footer';
+import axios from 'axios';
 
 const PersonalityTest = () => {
 
     const [ value, setValue ] = React.useState(new Array(10).fill('-1'));
 
-    const onClickHandler = () => {
+    const onClickHandler = async () => {
         for (let i = 0; i < 10; i++) {
             if (value[ i ] === '-1') {
                 alert('Please answer all the questions');
                 return;
             }
         }
+
+        const res = await axios.post("http://localhost:4000/userdata2", {
+            email: localStorage.getItem('email')
+        });
+
+        alert("Successfully Submitted!!");
+
+        navigate('/dashboard');
     }
 
 
