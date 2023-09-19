@@ -17,10 +17,10 @@ import { Menu as MenuIcon } from "@mui/icons-material";
 
 import { useNavigate } from "react-router-dom";
 
-const pages = [ "Explore", "Blog", "FAQ" ];
+const pages = ["Dashboard", "Explore", "Blog", "FAQ" ];
 const settings = [ "Profile", "Account", "Dashboard", "Logout" ];
 
-function ResponsiveAppBar() {
+function ResponsiveAppBar(props) {
   const navigate = useNavigate();
   const [ anchorElNav, setAnchorElNav ] = React.useState(null);
   const [ anchorElUser, setAnchorElUser ] = React.useState(null);
@@ -43,8 +43,16 @@ function ResponsiveAppBar() {
     setAnchorElUser(null);
   };
 
+  let mainColor = 'rgb(140, 86, 248)';
+  let bgColor = 'white';
+  if (props.theme === 'dark') {
+    mainColor = 'white';
+    bgColor = 'rgb(140, 86, 248)';
+  }
+
+
   return (
-    <AppBar position="sticky" sx={{ background: 'transparent', color: 'rgb(140, 86, 248)' }}>
+    <AppBar position="sticky" sx={{ background: bgColor, color: mainColor }}>
       <Container maxWidth="xl">
         <Toolbar
           disableGutters
@@ -140,11 +148,11 @@ function ResponsiveAppBar() {
               {pages.map((page) => (
                 <Button variant="text" sx={{
                   ":hover": {
-                    backgroundColor: 'rgb(140, 86, 248)',
-                    color: 'white'
+                    backgroundColor: mainColor,
+                    color: bgColor
                   },
                   my: 2,
-                  color: "rgb(140, 86, 248)",
+                  color: mainColor,
                   display: "block",
                 }}
                   key={page}
