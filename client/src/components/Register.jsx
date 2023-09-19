@@ -1,6 +1,7 @@
 // import React from "react";
 import { React, useState } from "react";
-// import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import {
   Card,
   Typography,
@@ -11,27 +12,29 @@ import {
   Link,
 } from "@mui/material";
 
-/// File is incomplete. You need to add input boxes to take input for users to register.
 function Register() {
-  const [ email, setEmail ] = useState("");
-  const [ UserName, setUserName ] = useState("");
-  const [ password, setPassword ] = useState("");
-  const [ confirmpassword, setConfirmPassword ] = useState("");
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [UserName, setUserName] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmpassword, setConfirmPassword] = useState("");
 
-  //   const registerHandler = async () => {
-  //     try {
-  //       const response = await axios.post("http://localhost:3000/admin/signup", {
-  //         username: email,
-  //         password,
-  //       });
+  const registerHandler = async () => {
+    try {
+      const response = await axios.post("http://localhost:4000/signup", {
+        username: UserName,
+        email,
+        password,
+      });
 
-  //       console.log(response);
-  //       alert(response.data.message);
-  //       localStorage.setItem("token", response.data.token);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
+      console.log(response);
+      alert(response.data.message);
+      localStorage.setItem("token", response.data.token);
+      navigate("/login");
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <>
@@ -45,8 +48,8 @@ function Register() {
       >
         <AppBar
           sx={{
-            background: 'transparent',
-            color: 'rgb(140, 86, 248)',
+            background: "transparent",
+            color: "rgb(140, 86, 248)",
             display: "flex",
             width: "100vw",
             height: "60px",
@@ -68,18 +71,21 @@ function Register() {
           >
             LOGO{" "}
           </Typography>
-          <Button variant="text" sx={{
-            ":hover": {
-              backgroundColor: 'rgb(140, 86, 248)',
-              color: 'white'
-            },
-            height: '70%',
-            marginX: '10px',
-            marginY: 'auto',
-            color: "rgb(140, 86, 248)",
-            display: "block",
-          }}>
-            <Link href="/login" underline="none" color="inherit" >
+          <Button
+            variant="text"
+            sx={{
+              ":hover": {
+                backgroundColor: "rgb(140, 86, 248)",
+                color: "white",
+              },
+              height: "70%",
+              marginX: "10px",
+              marginY: "auto",
+              color: "rgb(140, 86, 248)",
+              display: "block",
+            }}
+          >
+            <Link href="/login" underline="none" color="inherit">
               Login
             </Link>
           </Button>
@@ -94,7 +100,13 @@ function Register() {
             alignItems: "center",
           }}
         >
-          <Typography sx={{ fontWeight: "bold", color: 'rgb(140, 86, 248)', fontSize: '1.2rem' }}>
+          <Typography
+            sx={{
+              fontWeight: "bold",
+              color: "rgb(140, 86, 248)",
+              fontSize: "1.2rem",
+            }}
+          >
             Please Register with your credentials
           </Typography>
           <TextField
@@ -134,17 +146,22 @@ function Register() {
               setConfirmPassword(e.target.value);
             }}
           />
-          <Button variant="text" sx={{
-            ":hover": {
+          <Button
+            variant="text"
+            onClick={registerHandler}
+            sx={{
+              ":hover": {
+                color: "white",
+                backgroundColor: "rgb(124, 60, 240)",
+              },
+              my: 2,
+              display: "block",
+              backgroundColor: "rgb(140, 86, 248)",
               color: "white",
-              backgroundColor: 'rgb(124, 60, 240)',
-            },
-            my: 2,
-            display: "block",
-            backgroundColor: 'rgb(140, 86, 248)',
-            color: 'white',
-            paddingX: '15px'
-          }}>Register
+              paddingX: "15px",
+            }}
+          >
+            Register
           </Button>
         </Card>
       </Box>

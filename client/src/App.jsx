@@ -7,6 +7,7 @@ import Register from "./components/Register";
 import NavBar_logout from "./components/NavBar_logout";
 import Blog from "./components/Blog";
 import Explore from "./components/Explore";
+import Landing from "./components/Landing";
 // import Test from "./components/Test";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -25,6 +26,7 @@ function App() {
           <Route path="/navbar" element={<NavBar_logout />} />
 
           <Route path="/signup" element={<Register />} />
+          <Route path="/landing" element={<Landing />} />
           <Route path="/explore" element={<Explore />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/faq" element={<Faq />} />
