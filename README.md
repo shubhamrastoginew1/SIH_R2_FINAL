@@ -2,6 +2,9 @@
 
 An AI based career guidance web app.
 
+### Project Deployed Link
+https://langmodlabs.vercel.app/
+
 
 ### Demo Video Link
 
@@ -14,7 +17,12 @@ https://docs.google.com/presentation/d/1mE6_I0tW5C0lyUg7J0tyNBlscZuRIwIhwFXdEgiU
 
 ## Introduction
 
-This project have all sorts of functionality which a billing invoice system should have . this was a part of SIH internal hackathon ,we are presenting the solution on the given problem statement.
+### Problem Statement
+Making career choices and AI based counselling accessible to every child at secondary level along with aptitude tests and detailed career paths.
+
+### Solution 
+We  have build a web portal which has all the feature listed below and has AI based support system which will help the users for their career guidance.
+
 
 ## Features
 
@@ -22,11 +30,8 @@ This project have all sorts of functionality which a billing invoice system shou
 - User can attempt Aptitude and Personality Tests to get their career path based on the test renponse using machine learning.
 - User can see their progress on Dashboard.
 - User can read Blogs posted by experts for career guidance.
-- User can interact with machine learning based chat bot for career guidance.
+- User can interact with machine learning based chat bot for career guidance, It will generate responses based on their test scores.
 
-## Getting started
-
-This guide will walk you through the steps to install this app . The application consists of a Node.js backend and a React-Ionic frontend.
 
 ## Prerequisites
 

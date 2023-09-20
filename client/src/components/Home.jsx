@@ -5,7 +5,7 @@ import axios from "axios";
 
 const Home = () => {
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
+  const [ email, setEmail ] = useState("");
 
   ///for protected routes
   useEffect(() => {
@@ -60,10 +60,11 @@ const Home = () => {
             height: "100vh",
             // width: "75vw",
             margin: "0 auto 0 auto",
+            backgroundColor:"white"
           }}
         >
-          <Box sx={{ width: "60%", height: "100%" }}>
-            <img src="\assets\SIH_dataset.svg" style={{ width: "100%" }} />
+          <Box sx={{ width: "60%", height: "100vh", backgroundColorcolor: 'white' }}>
+            <img src="\assets\SIH_dataset.svg" style={{ width: "100%", height: '100vh', display: 'block' }} />
           </Box>
           <Box
             sx={{
