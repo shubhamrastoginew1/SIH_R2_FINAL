@@ -1,14 +1,7 @@
 # LangModLabs (Team: LangModLabs)
 
-A Billing and Invoicing System with Deep Linking to Android using  React and Ionic.
+An AI based career guidance web app.
 
-## Table of Contents
-
-- [Introduction](#introduction)
-- [Features](#features)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
 
 ### Demo Video Link
 
