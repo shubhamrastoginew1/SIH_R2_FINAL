@@ -2,6 +2,7 @@ const express = require("express");
 const jwt = require("jsonwebtoken");
 const fs = require("fs");
 const cors = require("cors");
+
 const app = express();
 
 app.use(cors());
@@ -147,78 +148,6 @@ app.post("/userdata2", (req, res, next) => {
     res.send("ok");
   }
 });
-
-// app.post("/userdata", (req, res, next) => {
-//   const info = req.body;
-//   const user_email = info.email;
-
-//   const userIndex = user_data.findIndex((user) => {
-//     return user.email === user_email;
-//   });
-//   if (userIndex === -1) {
-//     const newUser = {
-//       email: user_email,
-//       technical: info.technical,
-//       cognitive: info.cognitive,
-//       numerical: info.numerical,
-//     };
-//     user_data.push(newUser);
-//     fs.writeFileSync("./files/data.json", JSON.stringify(user_data));
-//     res.send("ok");
-//   } else {
-//     user_data[userIndex] = {
-//       email: user_email,
-//       technical: info.technical,
-//       cognitive: info.cognitive,
-//       numerical: info.numerical,
-//     };
-//     fs.writeFileSync("./files/data.json", JSON.stringify(user_data));
-//     res.send("ok");
-//   }
-// });
-
-// app.post("/userdata2", (req, res, next) => {
-//   const info = req.body;
-//   const user_email = info.email;
-
-//   const userIndex = user_data.findIndex((user) => {
-//     return user.email === user_email;
-//   });
-//   let personalities = [
-//     "ISTJ",
-//     "INFJ",
-//     "INTJ",
-//     "ENFJ",
-//     "ISTP",
-//     "ESFJ",
-//     "INFP",
-//     "ESFP",
-//     "ENFP",
-//     "ESTP",
-//     "ESTJ",
-//     "ENTJ",
-//     "INTP",
-//     "ISFJ",
-//     "ENTP",
-//     "ISFP",
-//   ];
-//   let personalityNumber = Math.floor(Math.random() * 15);
-//   let personality = personalities[personalityNumber];
-
-//   if (userIndex === -1) {
-//     const newUser = { email: user_email, personality: personality };
-//     user_data.push(newUser);
-//     fs.writeFileSync("./files/data.json", JSON.stringify(user_data));
-//     res.send("ok");
-//   } else {
-//     user_data[userIndex] = {
-//       ...user_data[userIndex],
-//       personality: personality,
-//     };
-//     fs.writeFileSync("./files/data.json", JSON.stringify(user_data));
-//     res.send("ok");
-//   }
-// });
 
 app.get("/dashboard", (req, res) => {
   res.json(user_data);
