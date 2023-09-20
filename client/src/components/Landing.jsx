@@ -41,7 +41,7 @@ const Landing = () => {
           <Button
             variant="contained"
             onClick={() => {
-              navigate("/explore");
+              navigate("/Explore");
             }}
             sx={{
               backgroundColor: "rgb(140, 86, 248)",

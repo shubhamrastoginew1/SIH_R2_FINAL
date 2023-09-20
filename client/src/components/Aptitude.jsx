@@ -1,7 +1,9 @@
 import React from "react";
 import { Box, Typography, Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const Aptitude = () => {
+  const navigate = useNavigate();
   return (
     <>
       <Box
@@ -36,6 +38,9 @@ const Aptitude = () => {
           </Typography>
           <Button
             variant="text"
+            onClick={() => {
+              navigate("/Explore/aptitudeTest");
+            }}
             sx={{
               width: "300px",
               backgroundColor: "rgb(140, 86, 248)",
@@ -45,7 +50,7 @@ const Aptitude = () => {
                 backgroundColor: "rgb(124, 60, 240)",
               },
             }}
-            href="/explore/aptitude-test"
+            // href="/explore/aptitude-test"
           >
             ATTEMPT NOW
           </Button>

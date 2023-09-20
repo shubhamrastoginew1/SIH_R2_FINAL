@@ -1,8 +1,10 @@
 import React from "react";
 import ResponsiveAppBar from "./NavBar";
 import { Box, Typography, Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const Personality = () => {
+  const navigate = useNavigate();
   return (
     <>
       <ResponsiveAppBar theme="dark" />
@@ -43,6 +45,9 @@ const Personality = () => {
           </Typography>
           <Button
             variant="text"
+            onClick={() => {
+              navigate("/Explore/personalityTest");
+            }}
             sx={{
               width: "300px",
               backgroundColor: "rgb(140, 86, 248)",
@@ -52,7 +57,7 @@ const Personality = () => {
                 backgroundColor: "rgb(124, 60, 240)",
               },
             }}
-            href="/explore/personality-test"
+            // href="/explore/personality-test"
           >
             ATTEMPT NOW
           </Button>
