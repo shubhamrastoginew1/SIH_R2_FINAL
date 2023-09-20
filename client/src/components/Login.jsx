@@ -16,7 +16,7 @@ import {
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const naviagte = useNavigate();
+  const navigate = useNavigate();
 
   const loginHandler = async () => {
     try {
@@ -39,7 +39,7 @@ function Login() {
         console.log(response);
         alert(response.data.message);
         localStorage.setItem("token", response.data.token);
-        naviagte("/");
+        navigate("/");
       }
     } catch (error) {
       console.log(error);
@@ -84,6 +84,9 @@ function Login() {
 
         <Button
           variant="text"
+          onClick={() => {
+            navigate("/signup");
+          }}
           sx={{
             ":hover": {
               backgroundColor: "rgb(140, 86, 248)",
@@ -96,9 +99,7 @@ function Login() {
             display: "block",
           }}
         >
-          <Link href="/signup" underline="none" color="inherit">
-            Signup
-          </Link>
+          Signup
         </Button>
       </AppBar>
 

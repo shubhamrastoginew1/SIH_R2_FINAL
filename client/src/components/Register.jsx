@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+
 import {
   Card,
   Typography,
@@ -90,6 +91,9 @@ function Register() {
           </Typography>
           <Button
             variant="text"
+            onClick={() => {
+              navigate("/login");
+            }}
             sx={{
               ":hover": {
                 backgroundColor: "rgb(140, 86, 248)",
@@ -102,9 +106,7 @@ function Register() {
               display: "block",
             }}
           >
-            <Link href="/login" underline="none" color="inherit">
-              Login
-            </Link>
+            Login
           </Button>
         </AppBar>
         <Card
