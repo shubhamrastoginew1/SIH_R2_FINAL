@@ -73,9 +73,9 @@ const AptitudeTest = () => {
       }
     );
 
-    alert("Successfully Submitted!!");
+    alert("Successfully Submitted!!,You can check your results in Dashboard");
 
-    navigate("/dashboard");
+    navigate("/landing");
   };
 
   const handleChange = (e, ind) => {

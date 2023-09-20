@@ -34,9 +34,9 @@ const PersonalityTest = () => {
       }
     );
 
-    alert("Successfully Submitted!!");
-
-    navigate("/dashboard");
+    alert("Successfully Submitted!!,You can check your results in Dashboard");
+    // location.reload();
+    navigate("/landing");
   };
 
   const handleChange = (e, ind) => {
