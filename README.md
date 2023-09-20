@@ -8,12 +8,11 @@ https://langmodlabs.vercel.app/
 
 ### Demo Video Link
 
-https://drive.google.com/file/d/1eNsi8WfI7gev4JgbAasi9i33joZqec42/view?usp=sharing
+https://drive.google.com/file/d/1-iPEyFDTfvDaNeegntEhNEznY-dcLJ1h/view?usp=sharing
 
 ### Presentation Link
 
 https://docs.google.com/presentation/d/1mE6_I0tW5C0lyUg7J0tyNBlscZuRIwIhwFXdEgiU5V8/edit?usp=sharing
-
 
 ## Introduction
 
