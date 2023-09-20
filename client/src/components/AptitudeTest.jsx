@@ -63,12 +63,15 @@ const AptitudeTest = () => {
       }
     }
 
-    const res = await axios.post("http://localhost:4000/userdata", {
-      email: localStorage.getItem("email"),
-      technical: technical,
-      cognitive: congnitive,
-      numerical: numerical,
-    });
+    const res = await axios.post(
+      "https://sih-r2-backend.onrender.com/userdata",
+      {
+        email: localStorage.getItem("email"),
+        technical: technical,
+        cognitive: congnitive,
+        numerical: numerical,
+      }
+    );
 
     alert("Successfully Submitted!!");
 

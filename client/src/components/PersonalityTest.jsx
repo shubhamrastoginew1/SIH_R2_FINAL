@@ -27,9 +27,12 @@ const PersonalityTest = () => {
       }
     }
 
-    const res = await axios.post("http://localhost:4000/userdata2", {
-      email: localStorage.getItem("email"),
-    });
+    const res = await axios.post(
+      "https://sih-r2-backend.onrender.com/userdata2",
+      {
+        email: localStorage.getItem("email"),
+      }
+    );
 
     alert("Successfully Submitted!!");
 

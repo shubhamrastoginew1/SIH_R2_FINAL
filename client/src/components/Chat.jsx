@@ -18,7 +18,7 @@ const Chat = () => {
 
   //request on loading
   useEffect(() => {
-    const url = "http://localhost:4000/dashboard";
+    const url = "https://sih-r2-backend.onrender.com/dashboard";
 
     const fetchdataChatup = async () => {
       try {
