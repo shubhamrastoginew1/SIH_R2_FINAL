@@ -24,10 +24,15 @@ export const Footer = () => {
         container
       >
         <Box>
-          <Link href="#" color={"inherit"}>
-            <Typography variant="h4">Logo</Typography>
+          <Link
+            href="/landing"
+            color={"inherit"}
+            sx={{ textDecoration: "none" }}
+          >
+            <Typography variant="h5">LangMODLabs</Typography>
           </Link>
         </Box>
+
         <Box
           item
           sx={{
@@ -38,35 +43,7 @@ export const Footer = () => {
             alignItems: "center",
           }}
         >
-          <Link href="#" underline="hover" color={"inherit"} marginX={4}>
-            <Typography fontSize={17}>Link1</Typography>
-          </Link>
-        </Box>
-        <Box
-          item
-          sx={{
-            fontSize: "1.5rem",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Link href="#" underline="hover" color={"inherit"} marginX={4}>
-            <Typography fontSize={17}>Link1</Typography>
-          </Link>
-        </Box>
-        <Box
-          item
-          sx={{
-            fontSize: "1.5rem",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Typography fontSize={18} marginBottom={1}>
+          <Typography fontSize={16} marginBottom={1}>
             FOLLOW US ON
           </Typography>
           <Box
@@ -78,19 +55,19 @@ export const Footer = () => {
             }}
           >
             <Link href="#" marginX={1}>
-              <InstagramIcon sx={{ color: "white", fontSize: "1.8rem" }} />
+              <InstagramIcon sx={{ color: "white", fontSize: "1.4rem" }} />
             </Link>
             <Link href="#" marginX={1}>
-              <FacebookIcon sx={{ color: "white", fontSize: "1.8rem" }} />
+              <FacebookIcon sx={{ color: "white", fontSize: "1.4rem" }} />
             </Link>
             <Link href="#" marginX={1}>
-              <YouTubeIcon sx={{ color: "white", fontSize: "1.8rem" }} />
+              <YouTubeIcon sx={{ color: "white", fontSize: "1.4rem" }} />
             </Link>
             <Link href="#" marginX={1}>
-              <LinkedInIcon sx={{ color: "white", fontSize: "1.8rem" }} />
+              <LinkedInIcon sx={{ color: "white", fontSize: "1.4rem" }} />
             </Link>
             <Link href="#" marginX={1}>
-              <TwitterIcon sx={{ color: "white", fontSize: "1.8rem" }} />
+              <TwitterIcon sx={{ color: "white", fontSize: "1.4rem" }} />
             </Link>
           </Box>
         </Box>
@@ -104,7 +81,7 @@ export const Footer = () => {
             alignItems: "center",
           }}
         >
-          <Typography fontSize={18} marginBottom={1}>
+          <Typography fontSize={16} marginBottom={1}>
             CONTACT US
           </Typography>
           <Box
@@ -118,15 +95,17 @@ export const Footer = () => {
             <Link
               href="#"
               marginX={1}
+              marginY={1}
               sx={{
                 display: "flex",
                 flexDirection: "row",
                 justifyContent: "center",
                 alignItems: "center",
+                textDecoration: "none",
               }}
             >
               <PhoneIcon
-                sx={{ color: "white", fontSize: "1.8rem", paddingRight: "5px" }}
+                sx={{ color: "white", fontSize: "1.4rem", paddingRight: "5px" }}
               />
               <Typography sx={{ color: "white" }}>+91 7978365412</Typography>
             </Link>
@@ -138,10 +117,11 @@ export const Footer = () => {
                 flexDirection: "row",
                 justifyContent: "center",
                 alignItems: "center",
+                textDecoration: "none",
               }}
             >
               <EmailIcon
-                sx={{ color: "white", fontSize: "1.8rem", paddingRight: "5px" }}
+                sx={{ color: "white", fontSize: "1.4rem", paddingRight: "5px" }}
               />
               <Typography sx={{ color: "white" }}>sih@gmail.com</Typography>
             </Link>

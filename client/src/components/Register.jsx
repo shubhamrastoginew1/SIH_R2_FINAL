@@ -1,4 +1,3 @@
-// import React from "react";
 import { React, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -32,6 +31,8 @@ function Register() {
         alert("Please enter a valid email address");
       else if (password !== confirmpassword)
         alert("password and confirmPassword does not match");
+      else if (password.length < 8)
+        alert("Password must have atleast 8 characters");
       else {
         const response = await axios.post("http://localhost:4000/signup", {
           username: UserName,
@@ -82,7 +83,7 @@ function Register() {
               color: "inherit",
             }}
           >
-            LOGO{" "}
+            LangMODLabs{" "}
           </Typography>
           <Button
             variant="text"

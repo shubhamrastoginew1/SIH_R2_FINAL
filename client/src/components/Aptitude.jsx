@@ -27,29 +27,32 @@ const Aptitude = () => {
         >
           <Typography variant="h4">Why this test ?</Typography>
           <Typography>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta
-            error quidem mollitia dignissimos, a blanditiis enim omnis animi
-            hic, rem ipsam praesentium, at eius. Non illo ex expedita quod
-            debitis?
+            They provide a comprehensive assessment of an individual's
+            abilities, including cognitive, emotional, and practical skills,
+            helping them make informed career choices that align with their
+            strengths and passions. These tests enhance self-awareness, promote
+            adaptability in a changing job market, reduce mismatched career
+            choices, and guide educational decisions.
           </Typography>
-          <Button variant="text" sx={{
-            width: "300px",
-            backgroundColor: "rgb(140, 86, 248)",
-            color: "white",
-            ":hover": {
+          <Button
+            variant="text"
+            sx={{
+              width: "300px",
+              backgroundColor: "rgb(140, 86, 248)",
               color: "white",
-              backgroundColor: "rgb(124, 60, 240)",
-            }
-          }} href="/explore/aptitude-test">
+              ":hover": {
+                color: "white",
+                backgroundColor: "rgb(124, 60, 240)",
+              },
+            }}
+            href="/explore/aptitude-test"
+          >
             ATTEMPT NOW
           </Button>
         </Box>
 
-        <img
-          src="\assets\undraw_elements_re_25t9.svg"
-          style={{ width: "38vw" }}
-        />
-      </Box >
+        <img src="assets\aptitude_test_img.svg" style={{ width: "38vw" }} />
+      </Box>
     </>
   );
 };

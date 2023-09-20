@@ -1,10 +1,12 @@
 import React from "react";
 import ResponsiveAppBar from "./NavBar";
 import { Footer } from "./Footer";
+import { useNavigate } from "react-router-dom";
 
 import { Box, Typography, Button } from "@mui/material";
 
 const Landing = () => {
+  const navigate = useNavigate();
   return (
     <>
       <ResponsiveAppBar />
@@ -27,15 +29,20 @@ const Landing = () => {
         >
           <Typography variant="h3">About Us</Typography>
           <Typography>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus
-            magni quo hic iure inventore commodi, corporis eveniet eligendi
-            voluptatum ipsum reiciendis, et doloremque eos accusantium provident
-            vero ad quidem debitis, molestiae laborum fugiat eius minima. Natus
-            neque fugit veniam, delectus vero inventore accusantium sapiente
-            voluptatem ipsa, cum ullam eveniet autem.
+            Our proprietary personality and aptitude assessment is meticulously
+            crafted, drawing upon the latest research, to empower our advanced
+            language model in providing you with tailored recommendations that
+            truly suit your needs. If you haven't already, we invite you to take
+            our comprehensive personality and aptitude test today. By simply
+            clicking the link below, you can access top-tier career advice from
+            our finely-tuned, large-scale language model, available around the
+            clock, exclusively for your career counseling needs.
           </Typography>
           <Button
             variant="contained"
+            onClick={() => {
+              navigate("/explore");
+            }}
             sx={{
               backgroundColor: "rgb(140, 86, 248)",
               ":hover": {
@@ -49,13 +56,30 @@ const Landing = () => {
             Get Started
           </Button>
           <Typography>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est commodi
-            alias laboriosam voluptas qui consequuntur, dolor incidunt tempore
-            ipsam quia nam dolore odio. Delectus, error sunt hic aut nisi quasi
-            debitis quis beatae nostrum vero, nobis magnam voluptatum porro
-            nesciunt facere quisquam, sequi veritatis fugiat quo nihil possimus
-            sit reiciendis?
+            If you have already completed our comprehensive personality and
+            aptitude assessment, you are now ready to address all your
+            career-related inquiries with ChatUp. ChatUp is a fine-tuned large
+            language model, tailored using a hand-crafted career counselling
+            dataset. To engage with ChatUp, simply follow the link below and
+            access expert guidance for your professional journey.
           </Typography>
+          <Button
+            variant="contained"
+            onClick={() => {
+              navigate("/chatup");
+            }}
+            sx={{
+              backgroundColor: "rgb(140, 86, 248)",
+              ":hover": {
+                backgroundColor: "rgb(140, 86, 248)",
+                color: "white",
+              },
+              width: "200px",
+              margin: "20px 0 20px 0",
+            }}
+          >
+            ChatUp
+          </Button>
         </Box>
         <Box sx={{ width: "40%", display: "flex" }}>
           <img

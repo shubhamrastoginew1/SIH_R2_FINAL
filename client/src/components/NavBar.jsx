@@ -17,8 +17,7 @@ import { Menu as MenuIcon } from "@mui/icons-material";
 
 import { useNavigate } from "react-router-dom";
 
-const pages = ["Dashboard", "Explore", "Blog", "ChatUp", "FAQ"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const pages = ["Explore", "ChatUp", "Blog", "FAQ", "Dashboard"];
 
 function ResponsiveAppBar(props) {
   const navigate = useNavigate();
@@ -177,47 +176,16 @@ function ResponsiveAppBar(props) {
                 onClick={logoutHandler}
                 sx={{
                   ":hover": {
-                    backgroundColor: "rgb(140, 86, 248)",
-                    color: "white",
+                    backgroundColor: mainColor,
+                    color: bgColor,
                   },
                   my: 2,
-                  color: "rgb(140, 86, 248)",
+                  color: mainColor,
                   display: "block",
                 }}
               >
                 Logout
               </Button>
-              {/* <Tooltip title="Open settings">
-                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar
-                    alt="Remy Sharp"
-                    src="/static/images/avatar/2.jpg"
-                    sx={{ mt: "10px" }}
-                  />
-                </IconButton>
-              </Tooltip> */}
-              {/* <Menu
-                sx={{ mt: "45px" }}
-                id="menu-appbar"
-                anchorEl={anchorElUser}
-                anchorOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                open={Boolean(anchorElUser)}
-                onClose={handleCloseUserMenu}
-              >
-                {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center">{setting}</Typography>
-                  </MenuItem>
-                ))}
-              </Menu> */}
             </Box>
           </Box>
         </Toolbar>

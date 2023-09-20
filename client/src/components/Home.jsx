@@ -3,9 +3,6 @@ import { Box, Typography, Link, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-import ResponsiveAppBar from "./NavBar";
-import NavBar_logout from "./NavBar_logout";
-
 const Home = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -24,20 +21,15 @@ const Home = () => {
               Authorization: `Bearer ${token}`,
             },
           });
-          // const result = await JSON.parse(response);
-          // Check if the response contains the username
+
           console.log(response);
           if (response.data) {
-            // alert("vbhjnkm");
-
             localStorage.setItem("email", response.data.email);
             setEmail(response.data.email);
-            // console.log(userName);
-            console.log(email);
+            // console.log(email);
             navigate("/landing");
           }
         } catch (error) {
-          // Handle errors more gracefully, e.g., display an error message to the user
           console.error("Error fetching user data:", error);
         }
       }
@@ -57,12 +49,8 @@ const Home = () => {
       <Box
         sx={{
           height: "100vh",
-          // backgroundImage: 'url("/assets/bg1.jpeg")',
-          // backgroundSize: "cover",
-          // backgroundPosition: "center",
         }}
       >
-        {/* <NavBar_logout /> */}
         <Box
           sx={{
             display: "flex",
@@ -72,18 +60,8 @@ const Home = () => {
             height: "100vh",
             // width: "75vw",
             margin: "0 auto 0 auto",
-            // backgroundColor: "pink",
           }}
         >
-          {/* <Typography variant="h2" sx={{ marginBottom: "1.25rem" }}>
-            Empowering Future with AI guidance
-          </Typography> */}
-          {/* <Typography sx={{ marginBottom: "1.25rem" }}>
-            Welcome to Your Career Compass! Discover your path with personalized
-            AI-driven career guidance, aptitude tests, and expert insights,
-            empowering you to navigate a future that fits
-          </Typography> */}
-
           <Box sx={{ width: "60%", height: "100%" }}>
             <img src="\assets\SIH_dataset.svg" style={{ width: "100%" }} />
           </Box>
@@ -91,7 +69,6 @@ const Home = () => {
             sx={{
               width: "40%",
               height: "100%",
-
               textAlign: "center",
               display: "flex",
               flexDirection: "column",
@@ -99,11 +76,13 @@ const Home = () => {
               backgroundColor: "white",
             }}
           >
-            <Typography variant="h3">Getting Started</Typography>
+            <Typography variant="h3" sx={{ marginBottom: "3px" }}>
+              Getting Started
+            </Typography>
             <Typography variant="h6">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
-              debitis placeat quam perspiciatis fuga iure repudiandae vitae
-              saepe consectetur? Laboriosam.
+              Here, you will find everything essential for accessing top-tier
+              career guidance, ensuring that your professional path is
+              illuminated with clarity and precision.
             </Typography>
 
             <Box

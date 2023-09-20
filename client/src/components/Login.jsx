@@ -13,7 +13,6 @@ import {
   Link,
 } from "@mui/material";
 
-/// File is incomplete. You need to add input boxes to take input for users to login.
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -25,8 +24,6 @@ function Login() {
         alert("Make sure all the details are filled");
       else if (email.indexOf("@") == -1)
         alert("Please enter a valid email address");
-      else if (password.length < 8)
-        alert("Password must have atleast 8 characters");
       else {
         const response = await axios.post("http://localhost:4000/login", null, {
           headers: {
@@ -78,7 +75,7 @@ function Login() {
             color: "inherit",
           }}
         >
-          LOGO
+          LangMODLabs
         </Typography>
 
         <Button

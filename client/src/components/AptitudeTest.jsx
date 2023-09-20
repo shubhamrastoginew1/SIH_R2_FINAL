@@ -31,13 +31,13 @@ const AptitudeTest = () => {
     "3/8",
   ];
 
-  try {
-    user_data = JSON.parse(fs.readFileSync(user_data_Path, "utf8"));
-  } catch (error) {
-    console.log(error);
-  }
+  //   try {
+  //     user_data = JSON.parse(fs.readFileSync(user_data_Path, "utf8"));
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
 
-  const onClickHandler = () => {
+  const onClickHandler = async () => {
     for (let i = 0; i < 9; i++) {
       if (value[i] === "-1") {
         alert("Please answer all the questions");
@@ -62,6 +62,17 @@ const AptitudeTest = () => {
         numerical = numerical + 1;
       }
     }
+
+    const res = await axios.post("http://localhost:4000/userdata", {
+      email: localStorage.getItem("email"),
+      technical: technical,
+      cognitive: congnitive,
+      numerical: numerical,
+    });
+
+    alert("Successfully Submitted!!");
+
+    navigate("/dashboard");
   };
 
   const handleChange = (e, ind) => {
@@ -76,8 +87,8 @@ const AptitudeTest = () => {
       <Box sx={{ width: "100%", marginY: "4rem", textAlign: "center" }}>
         <Typography variant="h3">Aptitude Test</Typography>
         <Typography>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur,
-          inventore?
+          This is an approximation of the complete test just to illustrate the
+          working of the prototype.
         </Typography>
       </Box>
       <FormControl sx={{ minWidth: "98vw" }}>
