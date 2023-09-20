@@ -153,7 +153,6 @@ app.get("/dashboard", (req, res) => {
   res.json(user_data);
 });
 
-app.post("/userdata");
 app.listen(4000, () => {
   console.log("server started");
 });
