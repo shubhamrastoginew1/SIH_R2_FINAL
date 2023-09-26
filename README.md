@@ -12,7 +12,7 @@ https://drive.google.com/file/d/1-iPEyFDTfvDaNeegntEhNEznY-dcLJ1h/view?usp=shari
 
 ### Presentation Link
 
-https://docs.google.com/presentation/d/1mE6_I0tW5C0lyUg7J0tyNBlscZuRIwIhwFXdEgiU5V8/edit?usp=sharing
+https://drive.google.com/file/d/1GAjK6fLnxHo4OXzxgne6lCFC1KALW7is/view?usp=sharing
 
 ## Introduction
 
